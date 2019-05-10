@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/iotaUtils.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">lib/</a> iotaUtils.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/70</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright 2016 Telefonica Investigación y Desarrollo, S.A.U
+ *
+ * This file is part of iotagent-ul
+ *
+ * iotagent-ul is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * iotagent-ul is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public
+ * License along with iotagent-ul.
+ * If not, seehttp://www.gnu.org/licenses/.
+ *
+ * For those usages not covered by the GNU Affero General Public License
+ * please contact with::[iot_support@tid.es]
+ */
+&nbsp;
+'use strict';
+&nbsp;
+var iotAgentLib = require('iotagent-node-lib'),
+    errors = require('./errors'),
+    _ = require('underscore'),
+    context = {
+        op: 'IOTAUL.IoTUtils'
+    },
+    async = require('async'),
+    apply = async.apply,
+    config = require('./configService');
+&nbsp;
+/**
+ * Get the API Key for the selected service if there is any, or the default API Key if a specific one does not exist.
+ *
+ * @param {String} service          Name of the service whose API Key we are retrieving.
+ * @param {String} subservice       Name of the subservice whose API Key we are retrieving.
+ */
+<span class="fstat-no" title="function not covered" >function getEffectiveApiKey(service, subservice, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    config.getLogger().debug(context, 'Getting effective API Key');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    iotAgentLib.findConfiguration(service, subservice, <span class="fstat-no" title="function not covered" >function(error, group) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (group) {</span>
+<span class="cstat-no" title="statement not covered" >            config.getLogger().debug('Using found group: %j', group);</span>
+<span class="cstat-no" title="statement not covered" >            callback(null, group.apikey);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (config.getConfig().defaultKey) {</span>
+<span class="cstat-no" title="statement not covered" >            config.getLogger().debug('Using default API Key: %s', config.getConfig().defaultKey);</span>
+<span class="cstat-no" title="statement not covered" >            callback(null, config.getConfig().defaultKey);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            config.getLogger().error(context, 'COMMANDS-002: Could not find any API Key information for device.');</span>
+<span class="cstat-no" title="statement not covered" >            callback(new errors.GroupNotFound(service, subservice));</span>
+        }
+    });
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function findOrCreate(deviceId, transport, group, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    iotAgentLib.getDevice(deviceId, group.service, group.subservice, <span class="fstat-no" title="function not covered" >function(error, device) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!error &amp;&amp; device) {</span>
+<span class="cstat-no" title="statement not covered" >            callback(null, device, group);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (error.name === 'DEVICE_NOT_FOUND') {</span>
+<span class="cstat-no" title="statement not covered" >            var newDevice = {</span>
+                id: deviceId,
+                service: group.service,
+                subservice: group.subservice,
+                type: group.type
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (</span>
+                config.getConfig().iota &amp;&amp;
+                config.getConfig().iota.iotManager &amp;&amp;
+                config.getConfig().iota.iotManager.protocol
+            ) {
+<span class="cstat-no" title="statement not covered" >                newDevice.protocol = config.getConfig().iota.iotManager.protocol;</span>
+            }
+&nbsp;
+            // Fix transport depending on binding
+<span class="cstat-no" title="statement not covered" >            if (!newDevice.transport) {</span>
+<span class="cstat-no" title="statement not covered" >                newDevice.transport = transport;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ('timestamp' in group) {</span>
+<span class="cstat-no" title="statement not covered" >                newDevice.timestamp = group.timestamp;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            iotAgentLib.register(newDevice, <span class="fstat-no" title="function not covered" >function(error, device) {</span></span>
+<span class="cstat-no" title="statement not covered" >                callback(error, device, group);</span>
+            });
+        } else {
+<span class="cstat-no" title="statement not covered" >            callback(error);</span>
+        }
+    });
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function mergeArrays(original, newArray) {</span>
+    /* jshint camelcase: false */
+<span class="cstat-no" title="statement not covered" >    var originalKeys = _.pluck(original, 'object_id'),</span>
+        newKeys = _.pluck(newArray, 'object_id'),
+        addedKeys = _.difference(newKeys, originalKeys),
+        differenceArray = newArray.filter(<span class="fstat-no" title="function not covered" >function(item) {</span>
+<span class="cstat-no" title="statement not covered" >            return addedKeys.indexOf(item.object_id) &gt;= 0;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return original.concat(differenceArray);</span>
+}
+&nbsp;
+/**
+ * If the object_id or the name of the attribute is missing, complete it with the other piece of data.
+ *
+ * @param {Object} attribute            Device attribute
+ * @return {*}                          Completed attribute
+ */
+<span class="fstat-no" title="function not covered" >function setDefaultAttributeIds(attribute) {</span>
+    /* jshint camelcase: false */
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!attribute.object_id &amp;&amp; attribute.name) {</span>
+<span class="cstat-no" title="statement not covered" >        attribute.object_id = attribute.name;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!attribute.name &amp;&amp; attribute.object_id) {</span>
+<span class="cstat-no" title="statement not covered" >        attribute.name = attribute.object_id;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return attribute;</span>
+}
+&nbsp;
+/**
+ * Complete the information of the device with the information in the configuration group (with precedence of the
+ * device).
+ *
+ * @param {Object} deviceData           Device data.
+ * @param {Object} configuration        Configuration data.
+ */
+<span class="fstat-no" title="function not covered" >function mergeDeviceWithConfiguration(deviceData, configuration, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    var fields = ['lazy', 'internalAttributes', 'active', 'staticAttributes', 'commands', 'subscriptions'],</span>
+        defaults = [null, null, [], [], [], [], []];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; fields.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        var confField = fields[i] === 'active' ? 'attributes' : fields[i];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (deviceData[fields[i]] &amp;&amp; configuration &amp;&amp; configuration[confField]) {</span>
+<span class="cstat-no" title="statement not covered" >            deviceData[fields[i]] = mergeArrays(deviceData[fields[i]], configuration[confField]);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (!deviceData[fields[i]] &amp;&amp; configuration &amp;&amp; configuration[confField]) {</span>
+<span class="cstat-no" title="statement not covered" >            deviceData[fields[i]] = configuration[confField];</span>
+        } else <span class="cstat-no" title="statement not covered" >if (!deviceData[fields[i]] &amp;&amp; (!configuration || !configuration[confField])) {</span>
+<span class="cstat-no" title="statement not covered" >            deviceData[fields[i]] = defaults[i];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (deviceData[fields[i]] &amp;&amp; ['active', 'lazy', 'commands'].indexOf(fields[i]) &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >            deviceData[fields[i]] = deviceData[fields[i]].map(setDefaultAttributeIds);</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    callback(null, deviceData);</span>
+}
+&nbsp;
+/**
+ * Retrieve a device from the device repository based on the given APIKey and DeviceID, creating one if none is
+ * found for the given data.
+ *
+ * @param {String} deviceId         Device ID of the device that wants to be retrieved or created.
+ * @param {String} apiKey           APIKey of the Device Group (or default APIKey).
+ */
+<span class="fstat-no" title="function not covered" >function retrieveDevice(deviceId, apiKey, transport, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    if (apiKey === config.getConfig().defaultKey) {</span>
+<span class="cstat-no" title="statement not covered" >        iotAgentLib.getDevicesByAttribute('id', deviceId, undefined, undefined, <span class="fstat-no" title="function not covered" >function(error, devices) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (error) {</span>
+<span class="cstat-no" title="statement not covered" >                callback(error);</span>
+            } else <span class="cstat-no" title="statement not covered" >if (devices &amp;&amp; devices.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                callback(null, devices[0]);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                config.getLogger().error(</span>
+                    context,
+                    /*jshint quotmark: double */
+                    "MEASURES-001: Couldn't find device data for APIKey [%s] and DeviceId[%s]",
+                    /*jshint quotmark: single */
+                    apiKey,
+                    deviceId
+                );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                callback(new errors.DeviceNotFound(deviceId));</span>
+            }
+        });
+    } else {
+<span class="cstat-no" title="statement not covered" >        async.waterfall(</span>
+            [
+                apply(iotAgentLib.getConfiguration, config.getConfig().iota.defaultResource, apiKey),
+                apply(findOrCreate, deviceId, transport),
+                mergeDeviceWithConfiguration
+            ],
+            callback
+        );
+    }
+}
+&nbsp;
+/**
+ * Update the result of a command with the information given by the client.
+ *
+ * @param {String} apiKey           API Key corresponding to the Devices configuration.
+ * @param {Object} device           Device object containing all the information about a device.
+ * @param {String} message          UL payload.
+ * @param {String} command          Command name.
+ * @param {String} status           End status of the command.
+ */
+<span class="fstat-no" title="function not covered" >function updateCommand(apiKey, device, message, command, status, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    iotAgentLib.setCommandResult(</span>
+        device.name,
+        config.getConfig().iota.defaultResource,
+        apiKey,
+        command,
+        message,
+        status,
+        device,
+<span class="fstat-no" title="function not covered" >        function(error) {</span>
+<span class="cstat-no" title="statement not covered" >            if (error) {</span>
+<span class="cstat-no" title="statement not covered" >                config.getLogger().error(</span>
+                    context,
+                    /*jshint quotmark: double */
+                    "COMMANDS-003: Couldn't update command status in the Context broker for device [%s]" +
+                        /*jshint quotmark: single */
+                        ' with apiKey [%s]: %s',
+                    device.id,
+                    apiKey,
+                    error
+                );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                callback(error);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                config</span>
+                    .getLogger()
+                    .debug(
+                        context,
+                        'Single measure for device [%s] with apiKey [%s] successfully updated',
+                        device.id,
+                        apiKey
+                    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                callback();</span>
+            }
+        }
+    );
+}
+&nbsp;
+exports.getEffectiveApiKey = getEffectiveApiKey;
+exports.retrieveDevice = retrieveDevice;
+exports.updateCommand = updateCommand;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 10:06:06 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

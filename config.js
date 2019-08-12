@@ -54,7 +54,23 @@ config.mqtt = {
     /**
      * Retain flag. (default is true).
      */
-    retain: false
+    retain: false,
+
+    /**
+     * Number of MQTT connection error retries (default is 5).
+     */
+    retries: 5,
+
+    /**
+     * Time between MQTT connection retries (default is 5 seconds).
+     */
+    retryTime: 5,
+
+    /**
+     * Time to keep connection open between client and MQTT broker (default is 0 seconds)
+     */
+    keepalive: 0
+
 };
 
 config.amqp = {
@@ -294,6 +310,12 @@ config.iota = {
      */
     defaultType: 'Thing'
 };
+
+/**
+ * flag indicating whether the incoming notifications to the IoTAgent should be processed using the bidirectionality
+ * plugin from the latest versions of the library or the UL-specific configuration retrieval mechanism.
+ */
+config.configRetrieval = false;
 
 /**
  * Default API Key, to use with device that have been provisioned without a Configuration Group.

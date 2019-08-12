@@ -5,7 +5,7 @@
 [![Docker badge](https://img.shields.io/docker/pulls/fiware/iotagent-ul.svg)](https://hub.docker.com/r/fiware/iotagent-ul/)
 [![Support badge](https://nexus.lab.fiware.org/repository/raw/public/badges/stackoverflow/iot-agents.svg)](https://stackoverflow.com/questions/tagged/fiware+iot)
 <br/>
-[![Documentation badge](https://img.shields.io/readthedocs/fiware-iotagent-ul.svg)](http://fiware-iotagent-ul.readthedocs.org/en/latest/?badge=latest)
+[![Documentation badge](https://img.shields.io/readthedocs/fiware-iotagent-ul.svg)](http://fiware-iotagent-ul.readthedocs.io/en/latest/?badge=latest)
 [![Build badge](https://img.shields.io/travis/telefonicaid/iotagent-ul.svg)](https://travis-ci.org/telefonicaid/iotagent-ul/)
 [![Coverage Status](https://coveralls.io/repos/github/telefonicaid/iotagent-ul/badge.svg?branch=master)](https://coveralls.io/github/telefonicaid/iotagent-ul?branch=master)
 ![Status](https://nexus.lab.fiware.org/static/badges/statuses/iot-ultralight.svg)
@@ -23,7 +23,7 @@ library's GitHub repository.
 This project is part of [FIWARE](https://www.fiware.org/). For more information check the FIWARE Catalogue entry for the
 [IoT Agents](https://github.com/Fiware/catalogue/tree/master/iot-agents).
 
-| :books: [Documentation](https://fiware-iotagent-ul.rtfd.io) | :mortar_board: [Academy](https://fiware-academy.readthedocs.io/en/latest/iot-agents/idas) | :whale: [Docker Hub](https://hub.docker.com/r/fiware/iotagent-ul/) | :dart: [Roadmap](https://github.com/telefonicaid/iotagent-ul/blob/master/docs/roadmap.md) |
+| :books: [Documentation](https://fiware-iotagent-ul.readthedocs.io) | :mortar_board: [Academy](https://fiware-academy.readthedocs.io/en/latest/iot-agents/idas) | :whale: [Docker Hub](https://hub.docker.com/r/fiware/iotagent-ul/) | :dart: [Roadmap](https://github.com/telefonicaid/iotagent-ul/blob/master/docs/roadmap.md) |
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
 
 
@@ -68,8 +68,8 @@ The following features are listed as [deprecated](docs/deprecated.md).
 ## API
 
 Apiary reference for the Configuration API can be found
-[here](http://docs.telefonicaiotiotagents.apiary.io/#reference/configuration-api). More information about IoT Agents and
-their APIs can be found in the IoT Agent Library [documentation](https://iotagent-node-lib.rtfd.io/).
+[here](https://telefonicaiotiotagents.docs.apiary.io/#reference/configuration-api). More information about IoT Agents and
+their APIs can be found in the IoT Agent Library [documentation](https://iotagent-node-lib.readthedocs.io/).
 
 The latest IoT Agent for Ultralight documentation is also available on
 [ReadtheDocs](https://fiware-iotagent-ul.readthedocs.io/en/latest/)
@@ -81,6 +81,30 @@ The latest IoT Agent for Ultralight documentation is also available on
 The test environment is preconfigured to run BDD testing style.
 
 Module mocking during testing can be done with [proxyquire](https://github.com/thlorenz/proxyquire)
+
+In order to successfuly run the tests, on the local machine three services must be running:
+
+-   **mosquitto** MQTT broker;
+-   **mongo** Database;
+-   **rabbitmq** AMQP broker/server;
+
+They can be run using Docker:
+
+```shell
+docker pull ansi/mosquitto
+docker pull mongo
+docker pull rabbitmq
+
+docker run -d -p 1883:1883   -l mosquitto ansi/mosquitto
+docker run -d -p 27017:27017 -l mongodb mongo
+docker run -d -p 5672:5672   -l rabbitmq rabbitmq
+```
+
+The required libraries, if missing, can be installed with:
+
+```
+npm install
+```
 
 To run tests, type
 

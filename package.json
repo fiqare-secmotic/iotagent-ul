@@ -30,7 +30,9 @@
     "prettier:text": "prettier 'README.md' 'docs/*.md' 'docs/**/*.md' --no-config --tab-width 4 --print-width 120 --write --prose-wrap always",
     "test:coverage": "istanbul cover _mocha -- --recursive 'test/**/*.js' --reporter spec --exit",
     "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "watch": "watch 'npm test && npm run lint' ./lib ./test"
+    "watch": "watch 'npm test && npm run lint' ./lib ./test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "amqplib": "~0.5.1",
@@ -44,7 +46,8 @@
     "request": "2.88.0",
     "swagger-jsdoc": "^3.4.0",
     "swagger-ui-express": "^4.1.2",
-    "underscore": "1.9.1"
+    "underscore": "1.9.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "coveralls": "~3.0.2",
@@ -95,5 +98,6 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
-  }
+  },
+  "snyk": true
 }

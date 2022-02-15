@@ -33,7 +33,7 @@
     "watch": "watch 'npm test && npm run lint' ./lib ./test"
   },
   "dependencies": {
-    "amqplib": "~0.5.1",
+    "amqplib": "~0.7.1",
     "async": "2.6.1",
     "body-parser": "1.18.3",
     "dateformat": "3.0.3",
